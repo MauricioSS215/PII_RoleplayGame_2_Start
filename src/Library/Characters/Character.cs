@@ -14,7 +14,19 @@ public abstract class Character
         VidaMax = vida;
         VidaActual = vida; //Al comenzar, la vidaActual y la maxima seran iguales
     }
-    
+    //El metodo agregar item se implemento para diferenciar el comportamiento de los personajes al interactuar con items magicos/no magicos.
+    public virtual void AgregarItem(Item item)
+    {
+        if (item.IsMagic)
+        {
+            throw new InvalidOperationException("Solo los elegidos pueden usar ítems mágicos.");
+        }
+        else
+        {
+            Items.Add(item);
+        }
+    }
+    //El metodo en relidad suma el valor de ataque de cada item de las lista Items de cada personaje.
     public double GetAttackValue()
     {
         double totalAtaque = 0;
@@ -27,7 +39,7 @@ public abstract class Character
         }
         return totalAtaque;
     }
-    
+    //El metodo en relidad suma el valor de defensa de cada item de las lista Items de cada personaje.
     public double GetDefValue()
     {
        double totalDefensa = 0;
@@ -36,10 +48,6 @@ public abstract class Character
             if (item is ItemDeDefensa)
             {
                 totalDefensa += item.Defensa;
-                if (item is CapaElfo capaElfo)
-                {
-                    totalDefensa += capaElfo.BonusDefensa;
-                }
             }
        }
        return totalDefensa;
