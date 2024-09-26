@@ -1,9 +1,7 @@
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Ucu.Poo.RoleplayGame;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace LibraryTest;
+namespace LibraryTests;
 
 
 public class CharacterTest
@@ -71,6 +69,15 @@ public class CharacterTest
 
         // Assert
         Assert.AreEqual(100, hero.VidaActual);  // Verificamos que la vida se restaure a VidaMax
+    }
+    [Test]
+    public void TestItemMago()
+    {
+        var itemMagico = new ItemDeAtaque("Báculo Mágico", 50, true);
+        var itemMagicoPrueba = new List<Item> { itemMagico };
+        var mago = new Sorcerer("Gandalf", itemMagicoPrueba, 100);
+
+        Assert.DoesNotThrow(() => mago.AgregarItem(itemMagico));
     }
 
 }
