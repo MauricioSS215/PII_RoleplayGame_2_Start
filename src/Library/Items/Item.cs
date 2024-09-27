@@ -39,3 +39,35 @@ public class ItemDeDefensa : Item
             throw new ArgumentException("Un ítem de defensa debe tener un valor de defensa mayor que 0.");
     }
 }
+
+public class HachaEnana : ItemDeAtaque
+{
+    public HachaEnana(string nombre, double ataque, bool isMagic = false) : base(nombre, ataque, isMagic)
+    {
+        
+    }
+}
+
+public class PistolaDePerno : ItemDeAtaque
+{
+    public int BalasIniciales { get; set; }
+    public int BalasDisponibles {get; set; }
+
+    public PistolaDePerno(string nombre, double ataque, int balasIniciales, bool isMagic) : base(nombre, ataque)
+    {
+        balasIniciales = BalasIniciales;
+        BalasDisponibles = balasIniciales;
+    }
+
+    public void DisminuirBalas()
+    {
+        if (BalasDisponibles > 0)
+        {
+            BalasDisponibles--;
+        }
+        else
+        {
+            Console.WriteLine("No queda municion.");
+        }
+    }
+}

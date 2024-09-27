@@ -1,10 +1,13 @@
 ﻿using Ucu.Poo.RoleplayGame;
-
+namespace Program;
 public class Program
 {
     static void Main(string[] args)
     {
         // Primero creamos UNICAMENTE ítems de ataque y defensa, algunos seran magicos.
+        var pistolaDePerno = new PistolaDePerno("Pistola de perno de 3 tiros", 5, balasIniciales: 60,false);
+        var hachaEnano = new HachaEnana("Hacha doble pesada",40,false);
+        var armaduraEnano = new ItemDeDefensa("Armadura de Acero Enana", 40, false);
         var arma1 = new ItemDeAtaque("Espada", 25);
         var arma2 = new ItemDeAtaque("Daga Oscura", 15);
         var armaMagica1 = new ItemDeAtaque("MagicSword", 80, true);
@@ -17,14 +20,14 @@ public class Program
         
         //Ahora crearemos las listas de items que seran usadas por los personajes
         var itemsKnight = new List<Item> { arma1, escudo1, armadura1 };
-        var itemsDwarf = new List<Item>{arma2, escudo1, armadura2};
+        var itemsDwarf = new List<Item>{hachaEnano,armaduraEnano};
         var itemsElfo = new List<Item> { arco1, escudo2, armadura2};
         var itemsSorcerer = new List<Item> { armaMagica1, escudo1, armadura1 };
         
         //En este momento creamos a nuestros personajes
         var caballero = new Knight("Artoria", itemsKnight, 100);
         var elfo = new Elfo("Legolas", itemsElfo, 120, arco1);
-        var enano = new Dwarf(nombre: "Karaz Ankor", itemsDwarf, vida: 250);
+        var enano = new Dwarf(nombre: "Karaz Ankor", itemsDwarf, vida: 250,hachaEnano,pistolaDePerno);
         var mago = new Sorcerer(nombre: "ShangTsung", itemsSorcerer, 140);
 
 

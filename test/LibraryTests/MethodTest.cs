@@ -1,7 +1,5 @@
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Ucu.Poo.RoleplayGame;
-
-namespace LibraryTests;
+using NUnit.Framework;
 
 
 public class CharacterTest
