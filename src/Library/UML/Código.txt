@@ -1,0 +1,80 @@
+classDiagram
+class Character{
+    +String Nombre
+    +Int VidaMax
+    +int VidaActual
+    +List<Item> Items
+    +AgregarItem(Item item)
+    +GetAttackValue()
+    +GetDefValue()
+    +DealDamage(Character enemigo)
+    +HealDamage()
+    +GetStats()
+}
+class Dwarf{
+    +String HabPasiva
+    +Bool usandoPistola
+    +HachaEnana HechaEnana
+    +PistolaDePerno PistolaDePerno
+    +Bool usandoPistola 
+    +AlternarArma()
+    +<<override>> GetStats()
+    +<<override>>DealDamage(Character enemigo)
+
+}
+class Sorcerer{
+    +SpellsBook SpellsBook
+    +AgregarItem(Item item)
+}
+class Archer{
+    +Arco ArcoElfo
+    +<<override>> DealDamage(Character enemigo)
+}
+class Knight
+class Item{
+    +String Nombre
+    +Double Ataque
+    +Double Defensa
+    +Bool IsMagic
+}
+class ItemDeAtaque
+class ItemDeDefensa
+class HachaEnana
+class PistolaDePerno{
+    +DisminuirBalas()
+}
+class Spell{
+    +int AttackValue
+    +int DefenseValue
+}
+class SpellBook{
+    +Spell[] Spells
+    +int AttackValue
+    +int DefenseValue
+    
+}
+class Arco{
+    +int FlechasIniciales
+    +int FlechasDisponibles
+    +DisminuirFlechas()
+}
+Character <|-- Dwarf
+Character <|-- Knight
+Character <|-- Archer
+Character <|-- Sorcerer
+Item <|-- ItemDeAtaque
+Item <|-- ItemDeDefensa
+ItemDeAtaque <|-- Arco
+ItemDeAtaque <|-- HachaEnana
+ItemDeAtaque <|-- PistolaDePerno
+Dwarf o-- HachaEnana
+Dwarf o-- PistolaDePerno
+Archer o-- Arco
+Sorcerer o-- SpellBook
+SpellBook o-- Spell
+Character o-- Item
+Dwarf o-- Item
+Archer o-- Item
+Sorcerer o-- Item
+Knight o-- Item
+
