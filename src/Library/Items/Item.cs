@@ -71,3 +71,10 @@ public class PistolaDePerno : ItemDeAtaque
         }
     }
 }
+public class Baston : Item
+{
+    public Baston(string nombre, double Ataque, double Defensa, bool isMagic) : base(nombre, Ataque, Defensa)
+    {
+        
+    }
+}

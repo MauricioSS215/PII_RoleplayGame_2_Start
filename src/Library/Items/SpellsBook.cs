@@ -2,7 +2,7 @@ namespace Ucu.Poo.RoleplayGame;
 
 public class SpellsBook
 {
-    public Spell[] Spells { get; set; }
+    public List<Spell> Spells { get; set; }
     
     public int AttackValue
     {
@@ -28,5 +28,15 @@ public class SpellsBook
             }
             return value;
         }
+    }
+
+    public SpellsBook()
+    {
+        Spells = new List<Spell>();
+    }
+
+    public void AddSpell(Spell spell)
+    {
+        Spells.Add(spell);
     }
 }

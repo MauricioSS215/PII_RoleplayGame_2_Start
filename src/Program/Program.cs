@@ -5,6 +5,10 @@ public class Program
     static void Main(string[] args)
     {
         // Primero creamos UNICAMENTE ítems de ataque y defensa, algunos seran magicos.
+        var baston = new Baston("Bastón Mágico", 10, 10, true);
+        Spell Rayo = new Spell("Rayo", 100, 0);
+        var librohechizo = new SpellsBook();
+        librohechizo.AddSpell(Rayo);
         var pistolaDePerno = new PistolaDePerno("Pistola de perno de 3 tiros", 5, balasIniciales: 60,false);
         var hachaEnano = new HachaEnana("Hacha doble pesada",40,false);
         var armaduraEnano = new ItemDeDefensa("Armadura de Acero Enana", 40, false);
@@ -28,7 +32,8 @@ public class Program
         var caballero = new Knight("Artoria", itemsKnight, 100);
         var elfo = new Elfo("Legolas", itemsElfo, 120, arco1);
         var enano = new Dwarf(nombre: "Karaz Ankor", itemsDwarf, vida: 250,hachaEnano,pistolaDePerno);
-        var mago = new Sorcerer(nombre: "ShangTsung", itemsSorcerer, 140);
+        var mago = new Sorcerer(nombre: "ShangTsung", itemsSorcerer, 140, librohechizo);
+        mago.AddBaston(baston);
 
 
         //Mostramos las estadisticas de nuestros personajes
