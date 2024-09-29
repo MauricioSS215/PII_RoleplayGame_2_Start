@@ -72,9 +72,10 @@ public class CharacterTest
     [Test]
     public void TestItemMago()
     {
+        var librohechizo = new SpellsBook();
         var itemMagico = new ItemDeAtaque("Báculo Mágico", 50, true);
         var itemMagicoPrueba = new List<Item> { itemMagico };
-        var mago = new Sorcerer("Gandalf", itemMagicoPrueba, 100);
+        var mago = new Sorcerer("Gandalf", itemMagicoPrueba, 100,librohechizo);
 
         Assert.DoesNotThrow(() => mago.AgregarItem(itemMagico));
     }

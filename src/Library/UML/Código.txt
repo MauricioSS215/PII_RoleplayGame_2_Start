@@ -58,12 +58,14 @@ class Arco{
     +int FlechasDisponibles
     +DisminuirFlechas()
 }
+class Baston
 Character <|-- Dwarf
 Character <|-- Knight
 Character <|-- Archer
 Character <|-- Sorcerer
 Item <|-- ItemDeAtaque
 Item <|-- ItemDeDefensa
+Item <|-- Baston
 ItemDeAtaque <|-- Arco
 ItemDeAtaque <|-- HachaEnana
 ItemDeAtaque <|-- PistolaDePerno
@@ -71,10 +73,12 @@ Dwarf o-- HachaEnana
 Dwarf o-- PistolaDePerno
 Archer o-- Arco
 Sorcerer o-- SpellBook
+Sorcerer o-- Baston
 SpellBook o-- Spell
 Character o-- Item
 Dwarf o-- Item
 Archer o-- Item
 Sorcerer o-- Item
 Knight o-- Item
+
 
