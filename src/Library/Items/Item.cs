@@ -53,10 +53,10 @@ public class PistolaDePerno : ItemDeAtaque
     public int BalasIniciales { get; set; }
     public int BalasDisponibles {get; set; }
 
-    public PistolaDePerno(string nombre, double ataque, int balasIniciales, bool isMagic) : base(nombre, ataque)
+    public PistolaDePerno(string nombre, double ataque, int Balasiniciales, bool isMagic) : base(nombre, ataque)
     {
-        balasIniciales = BalasIniciales;
-        BalasDisponibles = balasIniciales;
+        BalasIniciales = Balasiniciales;
+        BalasDisponibles = Balasiniciales;
     }
 
     public void DisminuirBalas()

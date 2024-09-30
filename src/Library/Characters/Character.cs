@@ -98,7 +98,7 @@ public partial class Dwarf
     {
         if (usandoPistola && PistolaDePerno != null && PistolaDePerno.BalasDisponibles > 0)
         {
-            // Si estamos usando la pistola, ejecutamos el código para disparar 3 balas
+            // Si esta usando la pistola, ejecuta el código para disparar 3 balas
             int balasDisparadas = 3;
             int balasAcertadas = 0;
             double probabilidadDeFallo = 0.3; // 30% de fallar cada disparo
