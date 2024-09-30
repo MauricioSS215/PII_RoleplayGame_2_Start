@@ -1,4 +1,5 @@
-﻿using Ucu.Poo.RoleplayGame;
+﻿using System.Xml.Serialization;
+using Ucu.Poo.RoleplayGame;
 namespace Program;
 public class Program
 {
@@ -9,8 +10,8 @@ public class Program
         Spell Rayo = new Spell("Rayo", 100, 0);
         var librohechizo = new SpellsBook();
         librohechizo.AddSpell(Rayo);
-        var pistolaDePerno = new PistolaDePerno("Pistola de perno de 3 tiros", 5, balasIniciales: 60,false);
         var hachaEnano = new HachaEnana("Hacha doble pesada",40,false);
+        var pistolaDePerno = new PistolaDePerno("Pistola de perno de 3 tiros", 5, Balasiniciales: 60,false);
         var armaduraEnano = new ItemDeDefensa("Armadura de Acero Enana", 40, false);
         var arma1 = new ItemDeAtaque("Espada", 25);
         var arma2 = new ItemDeAtaque("Daga Oscura", 15);
@@ -39,12 +40,15 @@ public class Program
         //Mostramos las estadisticas de nuestros personajes
         caballero.GetStats();
         elfo.GetStats();
-        //enano.GetStats();
+        enano.GetStats();
         mago.GetStats();
 
         //Aplicamos metodos para mostrar su funcionamiento, en este caso atacamos al caballero
         elfo.DealDamage(caballero);
         enano.DealDamage(caballero);
+        enano.AlternarArma();
+        enano.DealDamage(caballero);
+        Console.WriteLine("");
         mago.DealDamage(caballero);
 
         //Mostramos nuevamente el status actual del caballero, deberia tener menos vida
@@ -53,6 +57,5 @@ public class Program
         //Por ultimo llamamos al metodo HealDamage y luego mostramos sus stats para ver que realmente se curo
         caballero.HealDamage();
         caballero.GetStats();
-
     }
 }

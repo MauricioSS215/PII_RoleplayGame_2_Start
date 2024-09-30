@@ -12,12 +12,12 @@ public partial class Dwarf : Character
         HachaEnana = HachaEnana;
         HabPasiva = "Resistencia alta a la borrachera"; //agregar
         usandoPistola = false;//comienza con el arma principal
-        PistolaDePerno = PistolaDePerno;
+        PistolaDePerno = pistolaDePerno;
     }
     public void AlternarArma()
     {
         usandoPistola = !usandoPistola; //cambia de arma
-        string armaActual = usandoPistola ? "Pistola de Perno" : "Hacha doble pesada";
+        string armaActual = usandoPistola ? $"{PistolaDePerno.Nombre}" : $"{HachaEnana.Nombre}";
         Console.WriteLine($"{Nombre} ha cambiado su arma a {armaActual}");
     }
 }
