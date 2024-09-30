@@ -1,8 +1,6 @@
 using Ucu.Poo.RoleplayGame;
 using NUnit.Framework;
 
-
-
 public class CharacterTest
 {
     [Test]

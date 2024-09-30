@@ -39,7 +39,7 @@ public class Program
         //Mostramos las estadisticas de nuestros personajes
         caballero.GetStats();
         elfo.GetStats();
-        enano.GetStats();
+        //enano.GetStats();
         mago.GetStats();
 
         //Aplicamos metodos para mostrar su funcionamiento, en este caso atacamos al caballero

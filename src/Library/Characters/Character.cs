@@ -61,10 +61,7 @@ public abstract class Character
     public virtual double DealDamage(Character enemigo) //Sirve para atacar otro Personaje
     {
         double damage = GetAttackValue();
-        double
-            realDamage =
-                damage * (1 - (enemigo.GetDefValue() /
-                               100)); //Se inmplemento que la defensa disminuye el valor del ataque en un porcentaje
+        double realDamage = damage * (1 - (enemigo.GetDefValue() / 100)); //Se inmplemento que la defensa disminuye el valor del ataque en un porcentaje
         //Por ejemplo:Si la defensa es 20, el valor del ataque se vera disminuido en %20.
         enemigo.VidaActual = enemigo.VidaActual - realDamage;
         Console.WriteLine($"{Nombre} ha atacado a {enemigo.Nombre} y le ha hecho {realDamage} de daño.");
