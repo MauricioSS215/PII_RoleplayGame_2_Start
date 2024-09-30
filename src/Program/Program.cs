@@ -53,7 +53,6 @@ public class Program
         //Por ultimo llamamos al metodo HealDamage y luego mostramos sus stats para ver que realmente se curo
         caballero.HealDamage();
         caballero.GetStats();
-        q
-            
+
     }
 }
