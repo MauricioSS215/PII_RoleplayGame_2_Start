@@ -1,7 +1,7 @@
 using Ucu.Poo.RoleplayGame;
 using NUnit.Framework;
 
-public class CharacterTest
+public class RoleplayTests
 {
     [Test]
     public void TestGetAttackValue()
