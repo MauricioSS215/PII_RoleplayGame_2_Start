@@ -90,6 +90,16 @@ public abstract class Character
 
         Console.WriteLine("");
     }
+
+    public bool IsDead()
+    {
+        if (this.VidaActual <= 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
 
 public partial class Dwarf

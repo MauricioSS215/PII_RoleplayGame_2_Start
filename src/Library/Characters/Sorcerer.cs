@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Sorcerer : Character
+public class Sorcerer : Heroes
 {
     public SpellsBook SpellsBook { get; set; }
     private Baston? baston;
