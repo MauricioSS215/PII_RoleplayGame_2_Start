@@ -58,21 +58,21 @@ public class Program
         // caballero.HealDamage();
         // caballero.GetStats();
 
-        Giant gigante1 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante2 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante3 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante4 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante5 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante6 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante7= new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
-        Giant gigante8 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 100);
+        Giant gigante1 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante2 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante3 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante4 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante5 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante6 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante7= new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
+        Giant gigante8 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
         Knight caballero1 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
         Knight caballero2 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
         Knight caballero3 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
         List<Enemies> ListaEnemies = new List<Enemies> { gigante1, gigante2, gigante3, gigante4, gigante5, gigante6, gigante7, gigante8 };
         List<Heroes> ListaHeroes = new List<Heroes> { caballero1, caballero2, caballero3 };
         Encounters Encuentro = new Encounters(ListaEnemies, ListaHeroes);
-        Encuentro.AttackEnemies();
+        Encuentro.DoEncounter();
 
 
     }
