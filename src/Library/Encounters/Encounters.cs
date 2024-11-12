@@ -15,6 +15,21 @@ public class Encounters
         this.EnemiesList = enemiesList;
         this.HeroesList = heroesList;
     }
+    //Se usaron metodos publicos que llaman a los metodos privados para poder hacer las pruebas
+    public void TestEnemiesAttackHeroes()  // Método de prueba pública
+    {
+        EnemiesAttackHeroes();
+    }
+
+    public void TestHeroesAttackEnemies()  // Método de prueba pública
+    {
+        HeroesAttackEnemies();
+    }
+
+    public void TestRemoveDeadCharacters()  // Método de prueba pública
+    {
+        RemoveDeadCharacters();
+    }
 
     public void DoEncounter()
     {

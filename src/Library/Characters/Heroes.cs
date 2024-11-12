@@ -1,6 +1,6 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public abstract class Heroes:Character
+public class Heroes:Character
 {
     public int VP;
 

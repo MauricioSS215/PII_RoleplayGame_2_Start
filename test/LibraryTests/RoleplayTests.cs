@@ -77,5 +77,6 @@ public class RoleplayTests
 
         Assert.DoesNotThrow(() => mago.AgregarItem(itemMagico));
     }
+    
 
 }
