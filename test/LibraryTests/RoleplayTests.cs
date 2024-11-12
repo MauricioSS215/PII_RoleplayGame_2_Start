@@ -12,7 +12,7 @@ public class RoleplayTests
 
 
         //Arrange
-        var hero = new Knight("Meliodas",itemsArtoria, 100);
+        var hero = new Knight("Meliodas",itemsArtoria, 100, 0);
         var itemDeAtaque = hero.Items.OfType<ItemDeAtaque>().FirstOrDefault();
         //Act
         double testAtaque = hero.GetAttackValue();
@@ -29,7 +29,7 @@ public class RoleplayTests
 
 
         //Arrange
-        var hero = new Knight("Meliodas",itemsArtoria, 100);
+        var hero = new Knight("Meliodas",itemsArtoria, 100, 0);
         var itemDeDefensa = hero.Items.OfType<ItemDeDefensa>().FirstOrDefault();
         //Act
         double testDefensa = hero.GetDefValue();
@@ -43,8 +43,8 @@ public class RoleplayTests
         var espada = new ItemDeAtaque("Espada Larga", 50);
         var escudo = new ItemDeDefensa("Escudo de Hierro", 30);
         var itemsArtoria = new List<Item> { espada, escudo};
-        var hero = new Knight("Meliodas",itemsArtoria, 100);
-        var enemigo = new Knight("Evil", itemsArtoria, 90);
+        var hero = new Knight("Meliodas",itemsArtoria, 100, 0);
+        var enemigo = new Knight("Evil", itemsArtoria, 90, 0);
         
         //Act
         double testDmg = hero.DealDamage(enemigo);
@@ -58,7 +58,7 @@ public class RoleplayTests
         ItemDeAtaque espada = new ItemDeAtaque("Espada Larga", 50);
         ItemDeDefensa escudo = new ItemDeDefensa("Escudo de Hierro", 30);
         var itemsArtoria = new List<Item> { espada, escudo};
-        var hero = new Knight("Meliodas", itemsArtoria, 100); // VidaMax = 100
+        var hero = new Knight("Meliodas", itemsArtoria, 100, 0); // VidaMax = 100
         hero.VidaActual = 50; // Baja la vida actual a 50
 
         // Act
@@ -73,7 +73,7 @@ public class RoleplayTests
         var librohechizo = new SpellsBook();
         var itemMagico = new ItemDeAtaque("Báculo Mágico", 50, true);
         var itemMagicoPrueba = new List<Item> { itemMagico };
-        var mago = new Sorcerer("Gandalf", itemMagicoPrueba, 100,librohechizo);
+        var mago = new Sorcerer("Gandalf", itemMagicoPrueba, 100,librohechizo, 0);
 
         Assert.DoesNotThrow(() => mago.AgregarItem(itemMagico));
     }

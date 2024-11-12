@@ -29,8 +29,8 @@ public class Sorcerer : Heroes
         }
     }
 
-    public Sorcerer(string nombre, List<Item> items, double vida,SpellsBook spellbook, Baston? baston=null)
-        : base(nombre, items, vida)
+    public Sorcerer(string nombre, List<Item> items, double vida,SpellsBook spellbook, int vp, Baston? baston=null)
+        : base(nombre, items, vida, vp)
     {
         this.Baston = baston;
         this.SpellsBook = spellbook;

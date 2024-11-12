@@ -60,20 +60,6 @@ public class Encounters
                 if (enemy.VidaActual > 0)
                 {
                     hero.DealDamage(enemy);
-
-                    // Si el héroe mata al enemigo, gana los VP
-                    if (enemy.VidaActual <= 0)
-                    {
-                        hero.VP += enemy.VP;
-                        Console.WriteLine($"{hero.Nombre} ha ganado {enemy.VP} puntos de victoria.");
-                        
-                        // Si el héroe alcanza 5+ VP, se cura
-                        if (hero.VP >= 5)
-                        {
-                            hero.HealDamage();
-                            Console.WriteLine($"{hero.Nombre} se ha curado por tener 5 o más puntos de victoria.");
-                        }
-                    }
                 }
             }
         }
@@ -83,25 +69,5 @@ public class Encounters
     {
         HeroesList.RemoveAll(h => h.VidaActual <= 0);
         EnemiesList.RemoveAll(e => e.VidaActual <= 0);
-    }
-    
-
-    public void AttackEnemies()
-    {
-        for (int i = 0; i < EnemiesList.Count; i++)
-        {
-            if(i < HeroesList.Count)
-            {
-                EnemiesList[i].DealDamage(HeroesList[i]);
-                Console.WriteLine($"Se ha atacado {i}");
-            }
-            else
-            {
-                EnemiesList[i].DealDamage(HeroesList[i - HeroesList.Count]);
-                Console.WriteLine($"Se ha atacado {i}");
-            }
-
-            
-        }
     }
 }

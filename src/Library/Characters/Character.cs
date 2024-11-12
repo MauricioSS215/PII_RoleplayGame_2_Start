@@ -74,7 +74,15 @@ public abstract class Character
             if (enemigo.VidaActual <= 0)
             {
                 hero.VP += enemy.VP;  // El Héroe gana los puntos de victoria del Enemigo
-                Console.WriteLine($"{Nombre} ha derrotado a {enemigo.Nombre} y ha ganado {enemy.VP} puntos de victoria.");
+                Console.WriteLine($"{hero.Nombre} ha derrotado a {enemigo.Nombre} y ha ganado {enemy.VP} puntos de victoria.");
+                // Si el héroe alcanza 5+ VP, se cura
+                if (hero.VP >= 5)
+                {
+                    hero.HealDamage();
+                    Console.WriteLine($"{hero.Nombre} se ha curado por tener 5 o más puntos de victoria.");
+                    hero.VP = 0;
+                    Console.WriteLine($"The Hero {hero.Nombre} has healed and his VP had been reseted");
+                }
             }
         }
     

@@ -58,17 +58,17 @@ public class Program
         // caballero.HealDamage();
         // caballero.GetStats();
 
-        Giant gigante1 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante2 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante3 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante4 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante5 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante6 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante7= new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Giant gigante8 = new Giant("Gigante", new List<Item> { arma1, armadura1 }, 200, 1);
-        Knight caballero1 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
-        Knight caballero2 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
-        Knight caballero3 = new Knight("Caballero", new List<Item> { arma1, armadura1 }, 200);
+        Giant gigante1 = new Giant("Gigante1", new List<Item> { arma1, armadura1 }, 40, 2);
+        Giant gigante2 = new Giant("Gigante2", new List<Item> { arma1, armadura1 }, 40, 2);
+        Giant gigante3 = new Giant("Gigante3", new List<Item> { arma1, armadura1 }, 40, 1);
+        Giant gigante4 = new Giant("Gigante4", new List<Item> { arma1, armadura1 }, 40, 2);
+        Giant gigante5 = new Giant("Gigante5", new List<Item> { arma1, armadura1 }, 40, 2);
+        Giant gigante6 = new Giant("Gigante6", new List<Item> { arma1, armadura1 }, 40, 1);
+        Giant gigante7= new Giant("Gigante7", new List<Item> { arma1, armadura1 }, 40, 2);
+        Giant gigante8 = new Giant("Gigante8", new List<Item> { arma1, armadura1 }, 40, 3);
+        Knight caballero1 = new Knight("Caballero1", new List<Item> { arma1, armadura1 }, 60, 0);
+        Knight caballero2 = new Knight("Caballero2", new List<Item> { arma1, armadura1 }, 60, 0);
+        Knight caballero3 = new Knight("Caballero3", new List<Item> { arma1, armadura1 }, 60, 0);
         List<Enemies> ListaEnemies = new List<Enemies> { gigante1, gigante2, gigante3, gigante4, gigante5, gigante6, gigante7, gigante8 };
         List<Heroes> ListaHeroes = new List<Heroes> { caballero1, caballero2, caballero3 };
         Encounters Encuentro = new Encounters(ListaEnemies, ListaHeroes);
