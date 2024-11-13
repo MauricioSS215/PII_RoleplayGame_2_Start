@@ -58,13 +58,13 @@ public class Program
         caballero.HealDamage();
         caballero.GetStats();
 
-        Giant gigante1 = new Giant("Gigante1", new List<Item> { arma1, armadura1 }, 40, 2);
-        Giant gigante2 = new Giant("Gigante2", new List<Item> { arma1, armadura1 }, 40, 2);
-        Giant gigante3 = new Giant("Gigante3", new List<Item> { arma1, armadura1 }, 40, 1);
-        Giant gigante4 = new Giant("Gigante4", new List<Item> { arma1, armadura1 }, 40, 2);
-        Giant gigante5 = new Giant("Gigante5", new List<Item> { arma1, armadura1 }, 40, 2);
-        Giant gigante6 = new Giant("Gigante6", new List<Item> { arma1, armadura1 }, 40, 1);
-        Giant gigante7= new Giant("Gigante7", new List<Item> { arma1, armadura1 }, 40, 2); 
+        Giant gigante1 = new Giant();
+        Giant gigante2 = new Giant();
+        Giant gigante3 = new Giant();
+        Giant gigante4 = new Giant();
+        Giant gigante5 = new Giant();
+        Giant gigante6 = new Giant();
+        Giant gigante7= new Giant(); 
         Necromancer QuanChi = new Necromancer();
         Plumber Ricardo = new Plumber();
         WildWarrior Alcoth = new WildWarrior();
