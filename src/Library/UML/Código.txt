@@ -1,68 +1,111 @@
-classDiagram
-class Character{
-    +String Nombre
-    +Int VidaMax
-    +int VidaActual
-    +List<Item> Items
-    +AgregarItem(Item item)
-    +GetAttackValue()
-    +GetDefValue()
-    +DealDamage(Character enemigo)
+class Character {
+    +Nombre : String
+    +VidaMax : Double
+    +VidaActual : Double
+    +Items : List~Item~
+    +AgregarItem(item : Item)
+    +GetAttackValue() : Double
+    +GetDefValue() : Double
+    +DealDamage(enemigo : Character)
     +HealDamage()
     +GetStats()
 }
-class Dwarf{
-    +String HabPasiva
-    +Bool usandoPistola
-    +HachaEnana HechaEnana
-    +PistolaDePerno PistolaDePerno
-    +Bool usandoPistola 
-    +AlternarArma()
-    +<<override>> GetStats()
-    +<<override>>DealDamage(Character enemigo)
 
+Character <|-- Heroes
+Character <|-- Enemies
+
+class Heroes {
+    +VP : Int
 }
-class Sorcerer{
-    +SpellsBook SpellsBook
-    +AgregarItem(Item item)
+
+class Enemies {
+    +VP : Int
 }
-class Archer{
-    +Arco ArcoElfo
-    +<<override>> DealDamage(Character enemigo)
+
+Heroes <|-- Dwarf
+Heroes <|-- Elfo
+Heroes <|-- Knight
+Heroes <|-- Sorcerer
+
+Enemies <|-- Giant
+Enemies <|-- Necromancer
+Enemies <|-- Plumber
+Enemies <|-- WildWarrior
+
+class Dwarf {
+    +HabPasiva : String
+    +usandoPistola : Bool
+    +HachaEnana : HachaEnana
+    +PistolaDePerno : PistolaDePerno
+    +AlternarArma()
+    +GetStats()
+    +DealDamage(enemigo : Character)
 }
-class Knight
-class Item{
-    +String Nombre
-    +Double Ataque
-    +Double Defensa
-    +Bool IsMagic
+
+class Elfo {
+    +ArcoElfo : Arco
+    +DealDamage(enemigo : Character)
 }
+
+class Knight {
+}
+
+class Sorcerer {
+    +SpellsBook : SpellsBook
+    +Baston : Baston
+    +GetStats()
+}
+
+class Giant {
+    +GetStats()
+}
+
+class Necromancer {
+    +GetStats()
+}
+
+class Plumber {
+    +GetStats()
+}
+
+class WildWarrior {
+    +GetStats()
+}
+
+class Item {
+    +Nombre : String
+    +Ataque : Double
+    +Defensa : Double
+    +IsMagic : Bool
+}
+
 class ItemDeAtaque
 class ItemDeDefensa
+
 class HachaEnana
-class PistolaDePerno{
+class PistolaDePerno {
     +DisminuirBalas()
 }
-class Spell{
-    +int AttackValue
-    +int DefenseValue
+
+class Spell {
+    +AttackValue : Int
+    +DefenseValue : Int
 }
-class SpellBook{
-    +Spell[] Spells
-    +int AttackValue
-    +int DefenseValue
-    
+
+class SpellBook {
+    +Spells : Spell[]
+    +AttackValue : Int
+    +DefenseValue : Int
 }
-class Arco{
-    +int FlechasIniciales
-    +int FlechasDisponibles
+
+class Arco {
+    +FlechasIniciales : Int
+    +FlechasDisponibles : Int
     +DisminuirFlechas()
 }
+
 class Baston
-Character <|-- Dwarf
-Character <|-- Knight
-Character <|-- Archer
-Character <|-- Sorcerer
+
 Item <|-- ItemDeAtaque
 Item <|-- ItemDeDefensa
 Item <|-- Baston
@@ -71,13 +114,13 @@ ItemDeAtaque <|-- HachaEnana
 ItemDeAtaque <|-- PistolaDePerno
 Dwarf o-- HachaEnana
 Dwarf o-- PistolaDePerno
-Archer o-- Arco
+Elfo o-- Arco
 Sorcerer o-- SpellBook
 Sorcerer o-- Baston
 SpellBook o-- Spell
 Character o-- Item
 Dwarf o-- Item
-Archer o-- Item
+Elfo o-- Item
 Sorcerer o-- Item
 Knight o-- Item
 
