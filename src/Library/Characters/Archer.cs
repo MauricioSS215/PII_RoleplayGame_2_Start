@@ -1,10 +1,10 @@
 namespace Ucu.Poo.RoleplayGame;
 
-public class Elfo : Character
+public class Elfo : Heroes
 {
     public Arco ArcoElfo { get; set; }
-    public Elfo(string nombre, List<Item> items, double vida, Arco arcoElfo)
-        : base(nombre, items, vida)
+    public Elfo(string nombre, List<Item> items, double vida, Arco arcoElfo, int vp)
+        : base(nombre, items, vida, vp)
     {
         ArcoElfo = arcoElfo;
     }

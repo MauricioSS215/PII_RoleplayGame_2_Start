@@ -66,14 +66,15 @@ public class Program
         Giant gigante6 = new Giant("Gigante6", new List<Item> { arma1, armadura1 }, 40, 1);
         Giant gigante7= new Giant("Gigante7", new List<Item> { arma1, armadura1 }, 40, 2); 
         Necromancer QuanChi = new Necromancer();
+        Plumber Ricardo = new Plumber();
+        WildWarrior Alcoth = new WildWarrior();
         Knight caballero1 = new Knight("Caballero1", new List<Item> { arma1, armadura1 }, 60, 0);
         Knight caballero2 = new Knight("Caballero2", new List<Item> { arma1, armadura1 }, 60, 0);
         Knight caballero3 = new Knight("Caballero3", new List<Item> { arma1, armadura1 }, 60, 0);
-        List<Enemies> ListaEnemies = new List<Enemies> { gigante1, gigante2, gigante3, gigante4, gigante5, gigante6, gigante7, QuanChi };
+        
+        List<Enemies> ListaEnemies = new List<Enemies> { gigante1, gigante2, gigante3, gigante4, gigante5, gigante6, gigante7, QuanChi, Ricardo, Alcoth };
         List<Heroes> ListaHeroes = new List<Heroes> { caballero1, caballero2, caballero3 };
         Encounters Encuentro = new Encounters(ListaEnemies, ListaHeroes);
         Encuentro.DoEncounter();
-
-
     }
 }

@@ -2,8 +2,17 @@
 
 public class Plumber : Enemies
 {
-    public Plumber(string nombre, List<Item> items, double vida, int vp) : base(nombre, items, vida, vp)
+    public Plumber() : base(nombre: "Ricardo", new List<Item>
     {
-        //Literalmente es un fontanero
+        new ItemDeAtaque("Llave Inglesa", ataque: 20),
+        new ItemDeDefensa("Mameluco Resistente", defensa: 15)
+    }, vida: 45, vp: 1) // Este enemigo da 1 punto de victoria al ser derrotado
+    {
+    }
+    
+    public override void GetStats()
+    {
+        base.GetStats();
+        Console.WriteLine($"Este enemigo es un {Nombre}, y ofrece {VP} puntos de victoria al ser derrotado.");
     }
 }
