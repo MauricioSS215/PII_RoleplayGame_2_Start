@@ -73,9 +73,11 @@ public class Program
         Knight caballero3 = new Knight("Caballero3", new List<Item> { arma1, armadura1 }, 60, 0);
         Elfo arquero1 = new Elfo("Arquero1", new List<Item> { arma1, armadura1 }, 40, arco1, 0);
         Dwarf enano1 = new Dwarf("Enano1", new List<Item> { arma1, armadura1 }, 60, hachaEnano,pistolaDePerno,0);
+        Sorcerer mago1 = new Sorcerer("Mago1", new List<Item> {arma1, armadura1}, 140, librohechizo, 0);
+        
         
         List<Enemies> ListaEnemies = new List<Enemies> { gigante1, gigante2, gigante3, gigante4, gigante5, gigante6, gigante7, QuanChi, Ricardo, Alcoth };
-        List<Heroes> ListaHeroes = new List<Heroes> { caballero1, caballero2, caballero3, arquero1, enano1 };
+        List<Heroes> ListaHeroes = new List<Heroes> { caballero1, caballero2, caballero3, arquero1, enano1, mago1 };
         Encounters Encuentro = new Encounters(ListaEnemies, ListaHeroes);
         Encuentro.DoEncounter();
     }
